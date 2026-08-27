@@ -20,6 +20,7 @@
 
 enum znr_supported_fs {
 	ZNR_FS_XFS,
+	ZNR_FS_BTRFS,
 	ZNR_FS_UNKNOWN,
 };
 
@@ -92,6 +93,9 @@ static inline int znr_openat2(int dirfd, const char *pathname,
 
 /* XFS functions (znr_xfs.c) */
 extern const struct znr_fs_ops znr_xfs_ops;
+
+/* btrfs functions (znr_btrfs.c) */
+extern const struct znr_fs_ops znr_btrfs_ops;
 
 struct znr_fs *znr_fs_get(enum znr_supported_fs type);
 int znr_fs_open(const char *path);
